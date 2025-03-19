@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+
+  <img src="icons8-aprobación-60.png" alt="Logo de la aplicación">
+
+  <!-- Espacio para alinear los elementos a la derecha -->
+  <span class="spacer"></span>
+
+  <!-- Botones de navegación -->
+  <button mat-raised-button routerLink="lista_no_verificada">Todos</button>
+  <button mat-raised-button routerLink="lista_verificada">Verificados</button>
+
+
+</mat-toolbar>
+
+<div id="contenedor_lista">
+  <router-outlet/>
+</div>

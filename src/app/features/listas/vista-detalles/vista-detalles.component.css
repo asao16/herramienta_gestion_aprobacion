@@ -1,0 +1,15 @@
+
+.header {
+  display: flex;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--mat-sys-surface-container-high);
+}
+
+.text-dialog {
+  margin-left: 0;
+  padding-left: 0;
+}
