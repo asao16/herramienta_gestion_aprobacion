@@ -1,0 +1,42 @@
+.elemento_lista {
+  display: flex;
+  flex-direction: row;
+  justify-content: start; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  padding: 16px;
+
+  width: 50vw;
+  height: 7vh;
+  overflow: hidden;
+}
+
+mat-card-title {
+  font-size: 2vh;
+}
+
+
+
+.desct {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Espacio entre las tarjetas */
+}
+
+img{
+  max-height: 100px; /* Ajusta este valor según tus necesidades */
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  width: auto; /* Mantiene la proporción de la imagen */
+  height: 5vh; /* Mantiene la proporción de la imagen */
+  object-fit: contain; /* Cubre el espacio disponible sin distorsionar la imagen */
+}
+
+mat-card-actions {
+  display: flex;
+  gap: 8px; /* Espacio entre los botones */
+}

@@ -1,0 +1,25 @@
+
+
+/* Estilos para el toolbar */
+mat-toolbar {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  gap: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--mat-sys-primary-container);
+}
+
+
+#contenedor_lista {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: start;     /* Centra verticalmente */
+  height: 100vh;          /* Ocupa toda la altura de la ventana */
+  padding-top: 20vh;          /* Espaciado opcional */
+  margin: 0;
+}
+
+

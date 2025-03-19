@@ -1,0 +1,29 @@
+<div class="lista">
+  <mat-card class="elemento_lista" appearance="outlined" *ngFor="let item of obtenerElementos()">
+
+    <img [src]="item.imageUrl" alt="Photo of a Shiba Inu" >
+    <mat-card-actions>
+      <mat-checkbox class="example-margin"
+                    [checked]="item.estado === 'verificado'"
+                    [indeterminate]="item.estado === 'indeterminado'"
+                    (change)="onCheckboxChange(item)"
+      ></mat-checkbox>
+      <button mat-icon-button aria-label="Detalles" (click)="abrirDetalles(item)"><mat-icon>description</mat-icon></button>
+    </mat-card-actions>
+    <mat-card-header>
+<!--      <div mat-card-avatar class="header-image"></div>-->
+      <mat-card-title>{{item.title}}</mat-card-title>
+    </mat-card-header>
+    <span class="spacer"></span>
+    <mat-card-actions>
+      <button mat-icon-button aria-label="Eliminar" (click)="eliminarElemento(item)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-card-actions>
+
+
+  </mat-card>
+  <mat-paginator [length]="obtenerElementos().length" [pageSize]="pageSize"
+                 (page)="onPageChange($event)">
+  </mat-paginator>
+</div>
