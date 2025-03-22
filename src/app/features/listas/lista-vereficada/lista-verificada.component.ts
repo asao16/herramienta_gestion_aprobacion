@@ -7,7 +7,7 @@ import {
 } from '@angular/material/card';
 import {MatCheckbox} from '@angular/material/checkbox';
 import {MatIcon} from '@angular/material/icon';
-import {MatIconButton} from '@angular/material/button';
+import {MatButton, MatIconButton} from '@angular/material/button';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatDialog} from '@angular/material/dialog';
 import {VistaDetallesComponent} from '../vista-detalles/vista-detalles.component';
@@ -18,7 +18,7 @@ import {ConfirmacionEliminarComponent} from '../confirmacion-eliminar/confirmaci
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-lista-vereficada',
+  selector: 'app-lista-verificada',
   imports: [
     CommonModule,
     MatCard,
@@ -28,17 +28,17 @@ import {ActivatedRoute} from '@angular/router';
     MatCheckbox,
     MatIcon,
     MatIconButton,
-    MatPaginator
+    MatPaginator,
+    MatButton,
   ],
-  templateUrl: './lista-vereficada.component.html',
-  styleUrl: './lista-vereficada.component.css'
+  templateUrl: './lista-verificada.component.html',
+  styleUrl: './lista-verificada.component.css'
 })
-export class ListaVereficadaComponent implements OnInit {
+export class ListaVerificadaComponent implements OnInit {
 
   data: MappedPost[] = []; // Lista completa de datos
   pagedData: MappedPost[] = []; // Datos paginados
   pageSize = 7; // Tamaño de la página
-  // pageSizeOptions = [5, 10, 20]; // Opciones de tamaño de página
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -66,11 +66,13 @@ export class ListaVereficadaComponent implements OnInit {
 
   obtenerElementos(): MappedPost[] {
     if (this.mostrar_lista_verificada) {
+      // Lista de verificados: muestra solo 'verificado' y 'no-verificado'
       return this.data.filter((item) =>
         item.estado === 'verificado' || item.estado === 'no-verificado'
       );
     } else {
-      return this.data; // Devuelve todos los elementos
+      // Lista por verificar: muestra solo 'indeterminado'
+      return this.data.filter((item) => item.estado === 'indeterminado');
     }
   }
 
@@ -82,7 +84,7 @@ export class ListaVereficadaComponent implements OnInit {
   }
 
   updatePagedData(startIndex: number, endIndex: number): void {
-    this.pagedData = this.data.slice(startIndex, endIndex); // Actualiza los datos paginados
+    this.pagedData = this.obtenerElementos().slice(startIndex, endIndex);
   }
 
   eliminarElemento(item: MappedPost): void {
@@ -124,10 +126,11 @@ export class ListaVereficadaComponent implements OnInit {
     }
     console.log('Estado actualizado:', item.estado); // Verifica el estado actualizado
     this.ManipularListasService.actualizarLocalStorage(this.data);
-
     // Forzar la detección de cambios
     this.cdr.detectChanges();
+
   }
+
 
 
 }

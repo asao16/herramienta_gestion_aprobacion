@@ -16,6 +16,7 @@
             "outputPath": "dist/gestion-aprobacion-productos",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "sourceMap": true,
             "polyfills": [
               "zone.js"
             ],

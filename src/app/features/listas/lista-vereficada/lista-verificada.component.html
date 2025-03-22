@@ -1,5 +1,11 @@
 <div class="lista">
-  <mat-card class="elemento_lista" appearance="outlined" *ngFor="let item of obtenerElementos()">
+  <div  class="header-lista">
+  <h1 *ngIf="mostrar_lista_verificada" class="mat-headline-1">Verificados</h1>
+  <h1 *ngIf="!mostrar_lista_verificada" class="mat-headline-1">Por verificar</h1>
+    <span class="spacer"></span>
+  <button mat-raised-button aria-label="Confirmar" (click)="updatePagedData(0,pageSize)">Confirmar</button>
+  </div>
+  <mat-card class="elemento_lista" appearance="outlined" *ngFor="let item of pagedData">
 
     <img [src]="item.imageUrl" alt="imagen elemento">
     <mat-card-actions>
@@ -11,9 +17,8 @@
         <mat-icon>description</mat-icon>
       </button>
     </mat-card-actions>
-    <mat-card-header>
-      <!--      <div mat-card-avatar class="header-image"></div>-->
-      <mat-card-title>{{ item.title }}</mat-card-title>
+    <mat-card-header class="title">
+      <mat-card-title >{{ item.title }}</mat-card-title>
     </mat-card-header>
     <span class="spacer"></span>
     <mat-card-actions>
@@ -24,7 +29,8 @@
 
 
   </mat-card>
-  <mat-paginator [length]="obtenerElementos().length" [pageSize]="pageSize"
+  <mat-paginator [length]="obtenerElementos().length"
+                 [pageSize]="pageSize"
                  (page)="onPageChange($event)">
   </mat-paginator>
 </div>

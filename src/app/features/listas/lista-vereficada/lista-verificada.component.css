@@ -7,7 +7,7 @@
 
   width: 50vw;
   height: 7vh;
-  overflow: hidden;
+  /*overflow: hidden;*/
 
   border: 1px solid var(--mat-sys-surface-container);
 }
@@ -20,13 +20,6 @@ mat-card-title {
   padding: 10px;
 }
 
-
-
-.desct {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 
 .lista {
   display: flex;
@@ -44,5 +37,19 @@ img{
 
 mat-card-actions {
   display: flex;
-  gap: 8px; /* Espacio entre los botones */
+  gap: 8px;
+}
+
+.title {
+  margin-bottom: 12px;
+  overflow: hidden; /* Oculta el texto que se desborda */
+  text-overflow: ellipsis; /* Muestra "..." cuando el texto no cabe */
+  white-space: nowrap;
+}
+
+.header-lista {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 50vw;
 }
