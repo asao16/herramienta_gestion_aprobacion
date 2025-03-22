@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
 import {
-  MAT_DIALOG_DATA, MatDialog,
+  MAT_DIALOG_DATA,
   MatDialogActions,
   MatDialogClose,
   MatDialogContent, MatDialogRef,
@@ -12,13 +12,10 @@ import {
   MatCardContent,
   MatCardHeader,
   MatCardMdImage,
-  MatCardSmImage,
   MatCardTitle
 } from '@angular/material/card';
 import {MatCheckbox} from '@angular/material/checkbox';
 import {MatIcon} from '@angular/material/icon';
-import {MappedPost} from '../../../shared/tipoLista';
-import {ConfirmacionEliminarComponent} from '../confirmacion-eliminar/confirmacion-eliminar.component';
 import {ManipularListasService} from '../../../core/services/manipular-listas.service';
 
 @Component({
@@ -32,7 +29,6 @@ import {ManipularListasService} from '../../../core/services/manipular-listas.se
     MatCardActions,
     MatCardContent,
     MatCardHeader,
-    MatCardSmImage,
     MatCardMdImage,
     MatCardTitle,
     MatCheckbox,

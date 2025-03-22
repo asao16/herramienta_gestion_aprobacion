@@ -2,16 +2,12 @@ import {ChangeDetectorRef, Component, OnInit, ViewChild} from '@angular/core';
 import {
   MatCard,
   MatCardActions,
-  MatCardContent,
   MatCardHeader,
-  MatCardImage, MatCardSmImage,
-  MatCardSubtitle,
   MatCardTitle
 } from '@angular/material/card';
 import {MatCheckbox} from '@angular/material/checkbox';
-import {MatTooltip} from '@angular/material/tooltip';
 import {MatIcon} from '@angular/material/icon';
-import {MatButton, MatIconButton} from '@angular/material/button';
+import {MatIconButton} from '@angular/material/button';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatDialog} from '@angular/material/dialog';
 import {VistaDetallesComponent} from '../vista-detalles/vista-detalles.component';
@@ -27,16 +23,10 @@ import {ActivatedRoute} from '@angular/router';
     CommonModule,
     MatCard,
     MatCardHeader,
-    MatCardContent,
     MatCardActions,
-    MatCardSubtitle,
     MatCardTitle,
     MatCheckbox,
-    MatCardImage,
-    MatCardSmImage,
-    MatTooltip,
     MatIcon,
-    MatButton,
     MatIconButton,
     MatPaginator
   ],
